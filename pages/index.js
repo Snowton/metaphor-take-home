@@ -9,7 +9,7 @@ const Yo = () => {
     const getStuff = async () => {
         setDisabled(true)
         try {
-            let response = await fetch("http://localhost:3000/api/secret_place", {
+            let response = await fetch(process.env.URL + "/api/secret_place", {
                 method: "POST",
                 body: JSON.stringify({
                     query: value,
