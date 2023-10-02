@@ -1,0 +1,21 @@
+html, body, div {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: darkred;
+}
+
+input, button {
+    font-family: inherit;
+}
+
+a {
+    color: darkred;
+    text-decoration: none;
+}
+
+a:hover {
+    color: gray;
+}
