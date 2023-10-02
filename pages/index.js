@@ -9,7 +9,7 @@ const Yo = () => {
     const getStuff = async () => {
         setDisabled(true)
         try {
-            let response = await fetch(process.env.URL + "/api/secret_place", {
+            let response = await fetch("/api/secret_place", {
                 method: "POST",
                 body: JSON.stringify({
                     query: value,
@@ -46,7 +46,7 @@ const Yo = () => {
             <button onClick={getStuff} disabled={disabled}>Search!</button>
         </div>
         
-        <ol className={styles.urls}>{results.error ? <>{results.error}</> : results.results.map(c => <li><a href={c.url}>{c.url}</a></li>)}</ol>
+        <ol className={styles.urls}>{results.error || !results.results ? <>{results.error}</> : results.results.map(c => <li><a href={c.url}>{c.url}</a></li>)}</ol>
     </div>
 }
 
